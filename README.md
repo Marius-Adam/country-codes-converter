@@ -2,14 +2,12 @@
 
 <a id="readme-top"></a>
 
-<div align="center">
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
-</div>
 
 <br />
 <div align="center">
@@ -89,6 +87,7 @@ Converts an ISO 3 country code to an ISO 2 country code.
 - **Throws:** (Error) If the input code is not valid.
 
 ### Types
+
 **ISO2Code**: A union type of all valid ISO 2 country codes.
 **ISO3Code**: A union type of all valid ISO 3 country codes.
 
@@ -117,7 +116,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-Marius Adam - [@Marius Adam LinkedIn](https://www.linkedin.com/in/marius-adam-dev/) 
+Marius Adam - [@Marius Adam LinkedIn](https://www.linkedin.com/in/marius-adam-dev/)
 
 Project Link: [https://github.com/Marius-Adam/iso-country-code-converter](https://github.com/Marius-Adam/iso-country-code-converter)
 
