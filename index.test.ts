@@ -1,15 +1,19 @@
-import { convertCountryCode } from ".";
+import { convertToISO2, convertToISO3 } from ".";
 
-describe("convertCountryCode", () => {
-  it("converts ISO 3 to ISO 2 correctly", () => {
-    expect(convertCountryCode("USA", "ISO3")).toBe("US");
-    expect(convertCountryCode("JPN", "ISO3")).toBe("JP");
-    expect(convertCountryCode("XYZ", "ISO3")).toBe("Invalid ISO 3 code");
-  });
-
+describe("convertToISO3", () => {
   it("converts ISO 2 to ISO 3 correctly", () => {
-    expect(convertCountryCode("US", "ISO2")).toBe("USA");
-    expect(convertCountryCode("JP", "ISO2")).toBe("JPN");
-    expect(convertCountryCode("XY", "ISO2")).toBe("Invalid ISO 2 code");
+    expect(convertToISO3("US")).toBe("USA");
+    expect(convertToISO3("JP")).toBe("JPN");
+    //@ts-ignore - for testing purposes
+    expect(convertToISO3("XY")).toBe("Invalid ISO 2 code");
+  });
+});
+
+describe("convertToISO2", () => {
+  it("converts ISO 3 to ISO 2 correctly", () => {
+    expect(convertToISO2("USA")).toBe("US");
+    expect(convertToISO2("JPN")).toBe("JP");
+    //@ts-ignore - for testing purposes
+    expect(convertToISO2("XYZ")).toBe("Invalid ISO 3 code");
   });
 });

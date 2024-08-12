@@ -1,5 +1,5 @@
 {
-  "name": "convert-country-codes",
+  "name": "convert-iso-country-codes",
   "version": "1.0.0",
   "description": "A simple library for converting country codes between ISO 2 and ISO 3 formats.",
   "main": "index.ts",

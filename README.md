@@ -1,4 +1,4 @@
-# Country Code Converter
+# ISO Country Code Converter
 
 A simple library for converting country codes between ISO 2 and ISO 3 formats.
 
