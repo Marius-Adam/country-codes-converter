@@ -1,0 +1,50 @@
+{
+  "name": "convert-country-codes",
+  "version": "1.0.0",
+  "description": "A simple library for converting country codes between ISO 2 and ISO 3 formats.",
+  "main": "index.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marius-Adam/convert-country-codes.git"
+  },
+  "types": "index.d.ts",
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": [
+        "@swc/jest",
+        {
+          "jsc": {
+            "target": "es2019"
+          }
+        }
+      ]
+    }
+  },
+  "keywords": [
+    "country",
+    "codes",
+    "iso",
+    "2",
+    "iso",
+    "3",
+    "conversion",
+    "utility"
+  ],
+  "author": "Marius Adam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marius-Adam/convert-country-codes/issues"
+  },
+  "homepage": "https://github.com/Marius-Adam/convert-country-codes#readme",
+  "dependencies": {
+    "jest": "^29.7.0",
+    "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "@swc/jest": "^0.2.36",
+    "@types/jest": "^29.5.12"
+  }
+}
