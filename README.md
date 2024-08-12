@@ -27,7 +27,6 @@
 
 <!-- TABLE OF CONTENTS -->
 <details>
-
   <ol>
     <li><a href="#installation">Installation</a></li>
     <li><a href="#usage">Usage</a></li>
@@ -35,7 +34,6 @@
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-
   </ol>
 </details>
 
@@ -51,18 +49,18 @@ npm install convert-iso-country-codes
 
 #### Converting ISO 2 to ISO 3
 
-```
-import { convertToISO3 } from 'convert-iso-country-codes';
+```javascript
+import { convertToISO3 } from "convert-iso-country-codes";
 
-const iso3Code = convertToISO3('US'); // Returns 'USA'
+const iso3Code = convertToISO3("US"); // Returns 'USA'
 ```
 
 #### Converting ISO 3 to ISO 2
 
-```
-import { convertToISO2 } from 'convert-iso-country-codes';
+```javascript
+import { convertToISO2 } from "convert-iso-country-codes";
 
-const iso2Code = convertToISO2('USA'); // Returns 'US'
+const iso2Code = convertToISO2("USA"); // Returns 'US'
 ```
 
 ## API
