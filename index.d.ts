@@ -1,4 +1,4 @@
-declare const iso3ToIso2: {
+declare const ISO3ToISO2: {
     readonly AFG: "AF";
     readonly ALB: "AL";
     readonly DZA: "DZ";
@@ -248,18 +248,20 @@ declare const iso3ToIso2: {
     readonly ZMB: "ZM";
     readonly ZWE: "ZW";
 };
-type ISO2Code = (typeof iso3ToIso2)[keyof typeof iso3ToIso2];
-type ISO3Code = keyof typeof iso3ToIso2;
+type ISO2Code = (typeof ISO3ToISO2)[keyof typeof ISO3ToISO2];
+type ISO3Code = keyof typeof ISO3ToISO2;
 /**
  * Converts an ISO 2 country code to an ISO 3 country code.
- * @param {ISO2Code} iso2Code - The ISO 2 country code to convert.
- * @returns {ISO3Code | "Invalid ISO 2 code"} The corresponding ISO 3 country code, or "Invalid ISO 2 code" if the input code is not valid.
+ * @param {ISO2Code} ISO2Code - The ISO 2 country code to convert.
+ * @returns {ISO3Code} The corresponding ISO 3 country code.
+ * @throws {Error} If the input code is not valid.
  */
-export declare function convertToISO3(iso2Code: ISO2Code): ISO3Code | "Invalid ISO 2 code";
+export declare function convertToISO3(ISO2Code: ISO2Code): ISO3Code;
 /**
  * Converts an ISO 3 country code to an ISO 2 country code.
- * @param {ISO3Code} iso3Code - The ISO 3 country code to convert.
- * @returns {ISO2Code | "Invalid ISO 3 code"} The corresponding ISO 2 country code, or "Invalid ISO 3 code" if the input code is not valid.
+ * @param {ISO3Code} ISO3Code - The ISO 3 country code to convert.
+ * @returns {ISO2Code} The corresponding ISO 2 country code.
+ * @throws {Error} If the input code is not valid.
  */
-export declare function convertToISO2(iso3Code: ISO3Code): ISO2Code | "Invalid ISO 3 code";
+export declare function convertToISO2(ISO3Code: ISO3Code): ISO2Code;
 export {};

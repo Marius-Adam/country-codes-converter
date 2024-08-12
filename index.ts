@@ -1,4 +1,4 @@
-const iso3ToIso2 = {
+const ISO3ToISO2 = {
   AFG: "AF",
   ALB: "AL",
   DZA: "DZ",
@@ -249,28 +249,38 @@ const iso3ToIso2 = {
   ZWE: "ZW"
 } as const;
 
-type ISO2Code = (typeof iso3ToIso2)[keyof typeof iso3ToIso2];
-type ISO3Code = keyof typeof iso3ToIso2;
+type ISO2Code = (typeof ISO3ToISO2)[keyof typeof ISO3ToISO2];
+type ISO3Code = keyof typeof ISO3ToISO2;
 
-const iso2ToIso3 = Object.entries(iso3ToIso2).reduce((acc, [key, value]) => {
+const ISO2ToISO3 = Object.entries(ISO3ToISO2).reduce((acc, [key, value]) => {
   acc[value] = key;
   return acc;
 }, {} as { [key in ISO3Code]: ISO2Code });
 
 /**
  * Converts an ISO 2 country code to an ISO 3 country code.
- * @param {ISO2Code} iso2Code - The ISO 2 country code to convert.
- * @returns {ISO3Code | "Invalid ISO 2 code"} The corresponding ISO 3 country code, or "Invalid ISO 2 code" if the input code is not valid.
+ * @param {ISO2Code} ISO2Code - The ISO 2 country code to convert.
+ * @returns {ISO3Code} The corresponding ISO 3 country code.
+ * @throws {Error} If the input code is not valid.
  */
-export function convertToISO3(iso2Code: ISO2Code): ISO3Code | "Invalid ISO 2 code" {
-  return iso2ToIso3[iso2Code] || "Invalid ISO 2 code";
+export function convertToISO3(ISO2Code: ISO2Code): ISO3Code {
+  const ISO3Code = ISO2ToISO3[ISO2Code];
+  if (!ISO3Code) {
+    throw new Error("Invalid ISO 2 code");
+  }
+  return ISO3Code;
 }
 
 /**
  * Converts an ISO 3 country code to an ISO 2 country code.
- * @param {ISO3Code} iso3Code - The ISO 3 country code to convert.
- * @returns {ISO2Code | "Invalid ISO 3 code"} The corresponding ISO 2 country code, or "Invalid ISO 3 code" if the input code is not valid.
+ * @param {ISO3Code} ISO3Code - The ISO 3 country code to convert.
+ * @returns {ISO2Code} The corresponding ISO 2 country code.
+ * @throws {Error} If the input code is not valid.
  */
-export function convertToISO2(iso3Code: ISO3Code): ISO2Code | "Invalid ISO 3 code" {
-  return iso3ToIso2[iso3Code] || "Invalid ISO 3 code";
+export function convertToISO2(ISO3Code: ISO3Code): ISO2Code {
+  const ISO2Code = ISO3ToISO2[ISO3Code];
+  if (!ISO2Code) {
+    throw new Error("Invalid ISO 3 code");
+  }
+  return ISO2Code;
 }

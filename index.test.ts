@@ -5,7 +5,7 @@ describe("convertToISO3", () => {
     expect(convertToISO3("US")).toBe("USA");
     expect(convertToISO3("JP")).toBe("JPN");
     //@ts-ignore - for testing purposes
-    expect(convertToISO3("XY")).toBe("Invalid ISO 2 code");
+    expect(() => convertToISO3("XY")).toThrow("Invalid ISO 2 code");
   });
 });
 
@@ -14,6 +14,6 @@ describe("convertToISO2", () => {
     expect(convertToISO2("USA")).toBe("US");
     expect(convertToISO2("JPN")).toBe("JP");
     //@ts-ignore - for testing purposes
-    expect(convertToISO2("XYZ")).toBe("Invalid ISO 3 code");
+    expect(() => convertToISO2("XYZ")).toThrow("Invalid ISO 3 code");
   });
 });
