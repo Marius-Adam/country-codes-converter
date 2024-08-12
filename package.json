@@ -1,6 +1,6 @@
 {
   "name": "iso-country-codes-converter",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A simple library for converting country codes between ISO 3166 Alpha-2 (ISO2) and ISO 3166 Alpha-3 (ISO3) formats.",
   "main": "index.ts",
   "scripts": {
