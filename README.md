@@ -2,21 +2,21 @@
 
 <a id="readme-top"></a>
 
+<div align="center">
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
+</div>
 
 <br />
 <div align="center">
-<h3 align="center">ISO Country Codes Converter</h3>
+<h2 align="center">ISO Country Codes Converter</h2>
 
   <p align="center">
     A simple library for converting country codes between ISO 3166 Alpha-2 (ISO2) and ISO 3166 Alpha-3 (ISO3) formats.
-    <br />
-    <a href="https://github.com/Marius-Adam/iso-country-code-converter"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/Marius-Adam/iso-country-code-converter">View Demo</a>
@@ -31,15 +31,9 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
+    <li><a href="#installation">Installation</a></li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#api">API</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -94,6 +88,10 @@ Converts an ISO 3 country code to an ISO 2 country code.
 - **Returns:** (ISO2Code) The corresponding ISO 2 country code.
 - **Throws:** (Error) If the input code is not valid.
 
+### Types
+**ISO2Code**: A union type of all valid ISO 2 country codes.
+**ISO3Code**: A union type of all valid ISO 3 country codes.
+
 <!-- CONTRIBUTING -->
 
 ## Contributing
@@ -109,12 +107,6 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-### Top contributors:
-
-<a href="https://github.com/Marius-Adam/iso-country-code-converter/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Marius-Adam/iso-country-code-converter" alt="contrib.rocks image" />
-</a>
-
 <!-- LICENSE -->
 
 ## License
@@ -125,7 +117,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-Marius Adam - [@](https://www.linkedin.com/in/marius-adam-dev/)
+Marius Adam - [@Marius Adam LinkedIn](https://www.linkedin.com/in/marius-adam-dev/) 
 
 Project Link: [https://github.com/Marius-Adam/iso-country-code-converter](https://github.com/Marius-Adam/iso-country-code-converter)
 
