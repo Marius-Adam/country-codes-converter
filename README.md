@@ -14,7 +14,7 @@
 <h2 align="center">ISO Country Codes Converter</h2>
 
   <p align="center">
-    A simple library for converting country codes between ISO 3166 Alpha-2 (ISO2) and ISO 3166 Alpha-3 (ISO3) formats.
+    A simple library for converting country codes between ISO 3166 Alpha-2 (ISO2) ISO 3166 Alpha-3 (ISO3) and numeric formats.
     <br />
     <br />
     <a href="https://github.com/Marius-Adam/iso-country-code-converter">View Demo</a>
@@ -25,8 +25,9 @@
   </p>
 </div>
 
-<!-- TABLE OF CONTENTS -->
-<details>
+<br/>
+
+<summary><b>Table of contents</b></summary>
   <ol>
     <li><a href="#installation">Installation</a></li>
     <li><a href="#usage">Usage</a></li>
@@ -35,7 +36,8 @@
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
-</details>
+
+<br/>
 
 ## Installation
 
@@ -45,27 +47,65 @@ You can install the package using npm or yarn:
 npm install convert-iso-country-codes
 ```
 
+<br/>
+
 ## Usage
+
+`iso-country-codes-converter` is fully TypeScript-supported, ensuring type safety and improved development experience. Additionally, it boasts 100% code test coverage, which guarantees the reliability and stability of the library.
 
 #### Converting ISO 2 to ISO 3
 
 ```javascript
-import { convertToISO3 } from "convert-iso-country-codes";
+import { convertISO2ToISO3 } from "convert-iso-country-codes";
 
-const iso3Code = convertToISO3("US"); // Returns 'USA'
+const iso3Code = convertISO2ToISO3("US"); // Returns 'USA'
 ```
 
 #### Converting ISO 3 to ISO 2
 
 ```javascript
-import { convertToISO2 } from "convert-iso-country-codes";
+import { convertISO3ToISO2 } from "convert-iso-country-codes";
 
-const iso2Code = convertToISO2("USA"); // Returns 'US'
+const iso2Code = convertISO3ToISO2("USA"); // Returns 'US'
 ```
+
+#### Converting ISO 3 to Numeric
+
+```javascript
+import { convertISO3ToNumeric } from "convert-iso-country-codes";
+
+const numericCode = convertISO3ToNumeric("USA"); // Returns 840
+```
+
+#### Converting Numeric to ISO 3
+
+```javascript
+import { convertNumericToISO2 } from "convert-iso-country-codes";
+
+const iso2Code = convertNumericToISO3(840); // Returns 'USA'
+```
+
+#### Converting ISO 2 to Numeric
+
+```javascript
+import { convertISO2ToNumeric } from "convert-iso-country-codes";
+
+const numericCode = convertISO2ToNumeric("US"); // Returns 840
+```
+
+#### Converting Numeric to ISO 2
+
+```javascript
+import { convertNumericToISO2 } from "convert-iso-country-codes";
+
+const iso2Code = convertNumericToISO2(840); // Returns 'US'
+```
+
+<br/>
 
 ## API
 
-### `convertToISO3(ISO2Code: ISO2Code): ISO3Code`
+### `convertISO2ToISO3(ISO2Code: ISO2Code): ISO3Code`
 
 Converts an ISO 2 country code to an ISO 3 country code.
 
@@ -74,7 +114,7 @@ Converts an ISO 2 country code to an ISO 3 country code.
 - **Returns:** (ISO3Code) The corresponding ISO 3 country code.
 - **Throws:** (Error) If the input code is not valid.
 
-### `convertToISO2(ISO3Code: ISO3Code): ISO2Code`
+### `convertISO3ToISO2(ISO3Code: ISO3Code): ISO2Code`
 
 Converts an ISO 3 country code to an ISO 2 country code.
 
@@ -83,12 +123,51 @@ Converts an ISO 3 country code to an ISO 2 country code.
 - **Returns:** (ISO2Code) The corresponding ISO 2 country code.
 - **Throws:** (Error) If the input code is not valid.
 
+### `convertNumericToISO3(ISO2Code: NumericCode): ISO3Code`
+
+Converts a Numeric country code to an ISO 3 country code.
+
+- **Parameters:**
+  - `NumericCode` (NumericCode): The Numeric country code to convert.
+- **Returns:** (ISO3Code) The corresponding ISO 3 country code.
+- **Throws:** (Error) If the input code is not valid.
+
+### `convertISO3ToNumeric(ISO3Code: ISO3Code): NumericCode`
+
+Converts an ISO 3 country code to a Numeric country code.
+
+- **Parameters:**
+  - `ISO3Code` (ISO3Code): The ISO 3 country code to convert.
+- **Returns:** (NumericCode) The corresponding Numeric country code.
+- **Throws:** (Error) If the input code is not valid.
+
+### `convertNumericToISO2(NumericCode: NumericCode): ISO2Code`
+
+Converts an Numeric country code to an ISO 3 country code.
+
+- **Parameters:**
+  - `NumericCode` (NumericCode): The Numeric country code to convert.
+- **Returns:** (ISO2Code) The corresponding ISO 2 country code.
+- **Throws:** (Error) If the input code is not valid.
+
+### `convertISO2ToNumeric(ISO2Code: ISO2Code): NumericCode`
+
+Converts an ISO 2 country code to a Numeric country code.
+
+- **Parameters:**
+  - `ISO2Code` (ISO2Code): The ISO 2 country code to convert.
+- **Returns:** (NumericCode) The corresponding Numeric country code.
+- **Throws:** (Error) If the input code is not valid.
+
 ### Types
 
 **ISO2Code**: A union type of all valid ISO 2 country codes.
+
 **ISO3Code**: A union type of all valid ISO 3 country codes.
 
-<!-- CONTRIBUTING -->
+**NumericCode**: A union type of all valid numeric country codes.
+
+<br/>
 
 ## Contributing
 
@@ -98,18 +177,18 @@ If you have a suggestion that would make this better, please fork the repo and c
 Don't forget to give the project a star! Thanks again!
 
 1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
+2. Create your Feature Branch: `git checkout -b feature/AmazingFeature`
+3. Commit your Changes: `git commit -m 'Add some AmazingFeature'`
+4. Push to the Branch: `git push origin feature/AmazingFeature`
 5. Open a Pull Request
 
-<!-- LICENSE -->
+<br/>
 
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-<!-- CONTACT -->
+<br/>
 
 ## Contact
 
