@@ -17,7 +17,7 @@
     A simple library for converting country codes between ISO 3166 Alpha-2 (ISO2) ISO 3166 Alpha-3 (ISO3) and numeric formats.
     <br />
     <br />
-    <a href="https://github.com/Marius-Adam/iso-country-code-converter">View Demo</a>
+    <a href="https://stackblitz.com/edit/vitejs-vite-ymdwb7?file=src%2FApp.tsx">View Demo</a>
     ·
     <a href="https://github.com/Marius-Adam/iso-country-code-converter/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
@@ -105,59 +105,13 @@ const iso2Code = convertNumericToISO2(840); // Returns 'US'
 
 ## API
 
-### `convertISO2ToISO3(ISO2Code: ISO2Code): ISO3Code`
+### `convert<Codes>(CodeFormat: CodeFormat): ConvertedCodeFormat`
 
-Converts an ISO 2 country code to an ISO 3 country code.
+Converts a country code from one format to another.
 
-- **Parameters:**
-  - `ISO2Code` (ISO2Code): The ISO 2 country code to convert.
-- **Returns:** (ISO3Code) The corresponding ISO 3 country code.
-- **Throws:** (Error) If the input code is not valid.
-
-### `convertISO3ToISO2(ISO3Code: ISO3Code): ISO2Code`
-
-Converts an ISO 3 country code to an ISO 2 country code.
-
-- **Parameters:**
-  - `ISO3Code` (ISO3Code): The ISO 3 country code to convert.
-- **Returns:** (ISO2Code) The corresponding ISO 2 country code.
-- **Throws:** (Error) If the input code is not valid.
-
-### `convertNumericToISO3(ISO2Code: NumericCode): ISO3Code`
-
-Converts a Numeric country code to an ISO 3 country code.
-
-- **Parameters:**
-  - `NumericCode` (NumericCode): The Numeric country code to convert.
-- **Returns:** (ISO3Code) The corresponding ISO 3 country code.
-- **Throws:** (Error) If the input code is not valid.
-
-### `convertISO3ToNumeric(ISO3Code: ISO3Code): NumericCode`
-
-Converts an ISO 3 country code to a Numeric country code.
-
-- **Parameters:**
-  - `ISO3Code` (ISO3Code): The ISO 3 country code to convert.
-- **Returns:** (NumericCode) The corresponding Numeric country code.
-- **Throws:** (Error) If the input code is not valid.
-
-### `convertNumericToISO2(NumericCode: NumericCode): ISO2Code`
-
-Converts an Numeric country code to an ISO 3 country code.
-
-- **Parameters:**
-  - `NumericCode` (NumericCode): The Numeric country code to convert.
-- **Returns:** (ISO2Code) The corresponding ISO 2 country code.
-- **Throws:** (Error) If the input code is not valid.
-
-### `convertISO2ToNumeric(ISO2Code: ISO2Code): NumericCode`
-
-Converts an ISO 2 country code to a Numeric country code.
-
-- **Parameters:**
-  - `ISO2Code` (ISO2Code): The ISO 2 country code to convert.
-- **Returns:** (NumericCode) The corresponding Numeric country code.
-- **Throws:** (Error) If the input code is not valid.
+- **Parameters:** `CodeFormat`: ISO3, ISO2, Numeric
+- **Returns:** `ConvertedCodeFormat` The corresponding converted country code.
+- **Throws:** `Error` If the input code is not valid.
 
 ### Types
 
