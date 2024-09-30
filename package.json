@@ -1,5 +1,5 @@
 {
-  "name": "iso-country-codes-converter",
+  "name": "country-codes-converter",
   "version": "1.0.8",
   "description": "A simple library for converting country codes between ISO 3166 Alpha-2 (ISO2), ISO 3166 Alpha-3 (ISO3) and numeric formats.",
   "main": "index.ts",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Marius-Adam/iso-country-code-converter.git"
+    "url": "git+https://github.com/Marius-Adam/country-codes-converter.git"
   },
   "types": "index.d.ts",
   "keywords": [
@@ -25,9 +25,9 @@
   "author": "Marius Adam",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Marius-Adam/iso-country-code-converter/issues"
+    "url": "https://github.com/Marius-Adam/country-codes-converter/issues"
   },
-  "homepage": "https://github.com/Marius-Adam/iso-country-code-converter#readme",
+  "homepage": "https://github.com/Marius-Adam/country-codes-converter#readme",
   "dependencies": {
     "jest": "^29.7.0",
     "typescript": "^5.5.4"
