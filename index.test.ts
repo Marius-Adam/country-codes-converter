@@ -1,82 +1,76 @@
-//@ts-nocheck - for invalid test cases
-
 import {
-  convertISO3ToISO2,
-  convertISO2ToISO3,
-  convertISO3ToNumeric,
-  convertNumericToISO3,
-  convertISO2ToNumeric,
-  convertNumericToISO2
-} from ".";
+  iso3ToIso2,
+  iso2ToIso3,
+  iso3ToNumeric,
+  numericToIso3,
+  nameToIso3,
+  iso3ToName,
+  iso2ToNumeric,
+  numericToIso2,
+  nameToIso2,
+  iso2ToName,
+  numericToName,
+  nameToNumeric
+} from "./index";
 
-describe("convertISO2ToISO3", () => {
-  it("converts ISO 2 to ISO 3 correctly", () => {
-    expect(convertISO2ToISO3("US")).toBe("USA");
-    expect(convertISO2ToISO3("JP")).toBe("JPN");
-    expect(() => convertISO2ToISO3("XY")).toThrow("Invalid ISO 2 code");
-    expect(() => convertISO2ToISO3("123")).toThrow("Invalid ISO 2 code"); // numeric input
-    expect(() => convertISO2ToISO3("")).toThrow("Invalid ISO 2 code"); // empty input
-    expect(() => convertISO2ToISO3(undefined)).toThrow("Invalid ISO 2 code"); // undefined input
-    expect(() => convertISO2ToISO3(null)).toThrow("Invalid ISO 2 code"); // null input
+describe("Country code conversions", () => {
+  test("iso3ToIso2 should convert ISO3 to ISO2", async () => {
+    expect(await iso3ToIso2("USA")).toBe("US");
+    expect(await iso3ToIso2("CAN")).toBe("CA");
   });
-});
 
-describe("convertISO3ToISO2", () => {
-  it("converts ISO 3 to ISO 2 correctly", () => {
-    expect(convertISO3ToISO2("USA")).toBe("US");
-    expect(convertISO3ToISO2("JPN")).toBe("JP");
-    expect(() => convertISO3ToISO2("XYZ")).toThrow("Invalid ISO 3 code");
-    expect(() => convertISO3ToISO2("123")).toThrow("Invalid ISO 3 code"); // numeric input
-    expect(() => convertISO3ToISO2("")).toThrow("Invalid ISO 3 code"); // empty input
-    expect(() => convertISO3ToISO2(undefined)).toThrow("Invalid ISO 3 code"); // undefined input
-    expect(() => convertISO3ToISO2(null)).toThrow("Invalid ISO 3 code"); // null input
+  test("iso2ToIso3 should convert ISO2 to ISO3", async () => {
+    expect(await iso2ToIso3("US")).toBe("USA");
+    expect(await iso2ToIso3("CA")).toBe("CAN");
   });
-});
 
-describe("convertToNumeric", () => {
-  it("converts ISO 3 to numeric correctly", () => {
-    expect(convertISO3ToNumeric("USA")).toBe(840);
-    expect(convertISO3ToNumeric("JPN")).toBe(392);
-    expect(() => convertISO3ToNumeric("XYZ")).toThrow("Invalid ISO 3 code");
-    expect(() => convertISO3ToNumeric("123")).toThrow("Invalid ISO 3 code"); // numeric input
-    expect(() => convertISO3ToNumeric("")).toThrow("Invalid ISO 3 code"); // empty input
-    expect(() => convertISO3ToNumeric(undefined)).toThrow("Invalid ISO 3 code"); // undefined input
-    expect(() => convertISO3ToNumeric(null)).toThrow("Invalid ISO 3 code"); // null input
+  test("iso3ToNumeric should convert ISO3 to Numeric", async () => {
+    expect(await iso3ToNumeric("USA")).toBe("840");
+    expect(await iso3ToNumeric("CAN")).toBe("124");
   });
-});
 
-describe("convertNumericToISO3", () => {
-  it("converts numeric to ISO 3 correctly", () => {
-    expect(convertNumericToISO3(840)).toBe("USA");
-    expect(convertNumericToISO3(392)).toBe("JPN");
-    expect(() => convertNumericToISO3(1234)).toThrow("Invalid numeric code");
-    expect(() => convertNumericToISO3(-1)).toThrow("Invalid numeric code"); // negative input
-    expect(() => convertNumericToISO3(0)).toThrow("Invalid numeric code"); // zero input
-    expect(() => convertNumericToISO3(undefined)).toThrow("Invalid numeric code"); // undefined input
-    expect(() => convertNumericToISO3(null)).toThrow("Invalid numeric code"); // null input
+  test("numericToIso3 should convert Numeric to ISO3", async () => {
+    expect(await numericToIso3("840")).toBe("USA");
+    expect(await numericToIso3("124")).toBe("CAN");
   });
-});
 
-describe("convertISO2ToNumeric", () => {
-  it("converts ISO 2 to numeric correctly", () => {
-    expect(convertISO2ToNumeric("US")).toBe(840);
-    expect(convertISO2ToNumeric("JP")).toBe(392);
-    expect(() => convertISO2ToNumeric("XY")).toThrow("Invalid ISO 2 code");
-    expect(() => convertISO2ToNumeric("123")).toThrow("Invalid ISO 2 code"); // numeric input
-    expect(() => convertISO2ToNumeric("")).toThrow("Invalid ISO 2 code"); // empty input
-    expect(() => convertISO2ToNumeric(undefined)).toThrow("Invalid ISO 2 code"); // undefined input
-    expect(() => convertISO2ToNumeric(null)).toThrow("Invalid ISO 2 code"); // null input
+  test("nameToIso3 should convert Country Name to ISO3", async () => {
+    expect(await nameToIso3("United States")).toBe("USA");
+    expect(await nameToIso3("Canada")).toBe("CAN");
   });
-});
 
-describe("convertNumericToISO2", () => {
-  it("converts numeric to ISO 2 correctly", () => {
-    expect(convertNumericToISO2(840)).toBe("US");
-    expect(convertNumericToISO2(392)).toBe("JP");
-    expect(() => convertNumericToISO2(1234)).toThrow("Invalid numeric code");
-    expect(() => convertNumericToISO2(-1)).toThrow("Invalid numeric code"); // negative input
-    expect(() => convertNumericToISO2(0)).toThrow("Invalid numeric code"); // zero input
-    expect(() => convertNumericToISO2(undefined)).toThrow("Invalid numeric code"); // undefined input
-    expect(() => convertNumericToISO2(null)).toThrow("Invalid numeric code"); // null input
+  test("iso3ToName should convert ISO3 to Country Name", async () => {
+    expect(await iso3ToName("USA")).toBe("United States");
+    expect(await iso3ToName("CAN")).toBe("Canada");
+  });
+
+  test("iso2ToNumeric should convert ISO2 to Numeric", async () => {
+    expect(await iso2ToNumeric("US")).toBe("840");
+    expect(await iso2ToNumeric("CA")).toBe("124");
+  });
+
+  test("numericToIso2 should convert Numeric to ISO2", async () => {
+    expect(await numericToIso2("840")).toBe("US");
+    expect(await numericToIso2("124")).toBe("CA");
+  });
+
+  test("nameToIso2 should convert Country Name to ISO2", async () => {
+    expect(await nameToIso2("United States")).toBe("US");
+    expect(await nameToIso2("Canada")).toBe("CA");
+  });
+
+  test("iso2ToName should convert ISO2 to Country Name", async () => {
+    expect(await iso2ToName("US")).toBe("United States");
+    expect(await iso2ToName("CA")).toBe("Canada");
+  });
+
+  test("numericToName should convert Numeric to Country Name", async () => {
+    expect(await numericToName("840")).toBe("United States");
+    expect(await numericToName("124")).toBe("Canada");
+  });
+
+  test("nameToNumeric should convert Country Name to Numeric", async () => {
+    expect(await nameToNumeric("United States")).toBe("840");
+    expect(await nameToNumeric("Canada")).toBe("124");
   });
 });

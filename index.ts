@@ -1,614 +1,170 @@
-const ISO3ToISO2 = {
-  AFG: "AF",
-  ALB: "AL",
-  DZA: "DZ",
-  ASM: "AS",
-  AND: "AD",
-  AGO: "AO",
-  AIA: "AI",
-  ATA: "AQ",
-  ATG: "AG",
-  ARG: "AR",
-  ARM: "AM",
-  ABW: "AW",
-  AUS: "AU",
-  AUT: "AT",
-  AZE: "AZ",
-  BHS: "BS",
-  BHR: "BH",
-  BGD: "BD",
-  BRB: "BB",
-  BLR: "BY",
-  BEL: "BE",
-  BLZ: "BZ",
-  BEN: "BJ",
-  BMU: "BM",
-  BTN: "BT",
-  BOL: "BO",
-  BES: "BQ",
-  BIH: "BA",
-  BWA: "BW",
-  BVT: "BV",
-  BRA: "BR",
-  IOT: "IO",
-  BRN: "BN",
-  BGR: "BG",
-  BFA: "BF",
-  BDI: "BI",
-  CPV: "CV",
-  KHM: "KH",
-  CMR: "CM",
-  CAN: "CA",
-  CYM: "KY",
-  CAF: "CF",
-  TCD: "TD",
-  CHL: "CL",
-  CHN: "CN",
-  CXR: "CX",
-  CCK: "CC",
-  COL: "CO",
-  COM: "KM",
-  COG: "CG",
-  COD: "CD",
-  COK: "CK",
-  CRI: "CR",
-  CIV: "CI",
-  HRV: "HR",
-  CUB: "CU",
-  CUW: "CW",
-  CYP: "CY",
-  CZE: "CZ",
-  DNK: "DK",
-  DJI: "DJ",
-  DMA: "DM",
-  DOM: "DO",
-  ECU: "EC",
-  EGY: "EG",
-  SLV: "SV",
-  GNQ: "GQ",
-  ERI: "ER",
-  EST: "EE",
-  SWZ: "SZ",
-  ETH: "ET",
-  FLK: "FK",
-  FRO: "FO",
-  FJI: "FJ",
-  FIN: "FI",
-  FRA: "FR",
-  GUF: "GF",
-  PYF: "PF",
-  ATF: "TF",
-  GAB: "GA",
-  GMB: "GM",
-  GEO: "GE",
-  DEU: "DE",
-  GHA: "GH",
-  GIB: "GI",
-  GRC: "GR",
-  GRL: "GL",
-  GRD: "GD",
-  GLP: "GP",
-  GUM: "GU",
-  GTM: "GT",
-  GGY: "GG",
-  GIN: "GN",
-  GNB: "GW",
-  GUY: "GY",
-  HTI: "HT",
-  HMD: "HM",
-  VAT: "VA",
-  HND: "HN",
-  HKG: "HK",
-  HUN: "HU",
-  ISL: "IS",
-  IND: "IN",
-  IDN: "ID",
-  IRN: "IR",
-  IRQ: "IQ",
-  IRL: "IE",
-  IMN: "IM",
-  ISR: "IL",
-  ITA: "IT",
-  JAM: "JM",
-  JPN: "JP",
-  JEY: "JE",
-  JOR: "JO",
-  KAZ: "KZ",
-  KEN: "KE",
-  KIR: "KI",
-  PRK: "KP",
-  KOR: "KR",
-  KWT: "KW",
-  KGZ: "KG",
-  LAO: "LA",
-  LVA: "LV",
-  LBN: "LB",
-  LSO: "LS",
-  LBR: "LR",
-  LBY: "LY",
-  LIE: "LI",
-  LTU: "LT",
-  LUX: "LU",
-  MAC: "MO",
-  MKD: "MK",
-  MDG: "MG",
-  MWI: "MW",
-  MYS: "MY",
-  MDV: "MV",
-  MLI: "ML",
-  MLT: "MT",
-  MHL: "MH",
-  MTQ: "MQ",
-  MRT: "MR",
-  MUS: "MU",
-  MYT: "YT",
-  MEX: "MX",
-  FSM: "FM",
-  MDA: "MD",
-  MCO: "MC",
-  MNG: "MN",
-  MNE: "ME",
-  MSR: "MS",
-  MAR: "MA",
-  MOZ: "MZ",
-  MMR: "MM",
-  NAM: "NA",
-  NRU: "NR",
-  NPL: "NP",
-  NLD: "NL",
-  NCL: "NC",
-  NZL: "NZ",
-  NIC: "NI",
-  NER: "NE",
-  NGA: "NG",
-  NIU: "NU",
-  NFK: "NF",
-  MNP: "MP",
-  NOR: "NO",
-  OMN: "OM",
-  PAK: "PK",
-  PLW: "PW",
-  PSE: "PS",
-  PAN: "PA",
-  PNG: "PG",
-  PRY: "PY",
-  PER: "PE",
-  PHL: "PH",
-  PCN: "PN",
-  POL: "PL",
-  PRT: "PT",
-  PRI: "PR",
-  QAT: "QA",
-  REU: "RE",
-  ROU: "RO",
-  RUS: "RU",
-  RWA: "RW",
-  BLM: "BL",
-  SHN: "SH",
-  KNA: "KN",
-  LCA: "LC",
-  MAF: "MF",
-  SPM: "PM",
-  VCT: "VC",
-  WSM: "WS",
-  SMR: "SM",
-  STP: "ST",
-  SAU: "SA",
-  SEN: "SN",
-  SRB: "RS",
-  SYC: "SC",
-  SLE: "SL",
-  SGP: "SG",
-  SXM: "SX",
-  SVK: "SK",
-  SVN: "SI",
-  SLB: "SB",
-  SOM: "SO",
-  ZAF: "ZA",
-  SGS: "GS",
-  SSD: "SS",
-  ESP: "ES",
-  LKA: "LK",
-  SDN: "SD",
-  SUR: "SR",
-  SJM: "SJ",
-  SWE: "SE",
-  CHE: "CH",
-  SYR: "SY",
-  TWN: "TW",
-  TJK: "TJ",
-  TZA: "TZ",
-  THA: "TH",
-  TLS: "TL",
-  TGO: "TG",
-  TKL: "TK",
-  TON: "TO",
-  TTO: "TT",
-  TUN: "TN",
-  TUR: "TR",
-  TKM: "TM",
-  TCA: "TC",
-  TUV: "TV",
-  UGA: "UG",
-  UKR: "UA",
-  ARE: "AE",
-  GBR: "GB",
-  USA: "US",
-  UMI: "UM",
-  URY: "UY",
-  UZB: "UZ",
-  VUT: "VU",
-  VEN: "VE",
-  VNM: "VN",
-  VGB: "VG",
-  VIR: "VI",
-  WLF: "WF",
-  ESH: "EH",
-  YEM: "YE",
-  ZMB: "ZM",
-  ZWE: "ZW"
-} as const;
+/**
+ * Represents a country with its relevant codes and name.
+ * @typedef {Object} Country
+ * @property {string} cca3 - ISO3 code.
+ * @property {string} cca2 - ISO2 code.
+ * @property {string} ccn3 - Numeric code (as a string).
+ * @property {Object} name - Contains the country name.
+ * @property {string} name.common - Country name.
+ */
+type Country = {
+  cca3: string; // ISO3 code
+  cca2: string; // ISO2 code
+  ccn3: string; // Numeric code (as a string)
+  name: {
+    common: string; // Country name
+  };
+};
 
-const ISO3ToNumeric = {
-  AFG: 4,
-  ALB: 8,
-  DZA: 12,
-  ASM: 16,
-  AND: 20,
-  AGO: 24,
-  AIA: 660,
-  ATA: 10,
-  ATG: 28,
-  ARG: 32,
-  ARM: 51,
-  ABW: 533,
-  AUS: 36,
-  AUT: 40,
-  AZE: 31,
-  BHS: 44,
-  BHR: 48,
-  BGD: 50,
-  BRB: 52,
-  BLR: 112,
-  BEL: 56,
-  BLZ: 84,
-  BEN: 204,
-  BMU: 60,
-  BTN: 64,
-  BOL: 68,
-  BES: 535,
-  BIH: 70,
-  BWA: 72,
-  BVT: 74,
-  BRA: 76,
-  IOT: 86,
-  BRN: 96,
-  BGR: 100,
-  BFA: 854,
-  BDI: 108,
-  CPV: 132,
-  KHM: 116,
-  CMR: 120,
-  CAN: 124,
-  CYM: 136,
-  CAF: 140,
-  TCD: 148,
-  CHL: 152,
-  CHN: 156,
-  CXR: 162,
-  CCK: 166,
-  COL: 170,
-  COM: 174,
-  COG: 178,
-  COD: 180,
-  COK: 184,
-  CRI: 188,
-  CIV: 384,
-  HRV: 191,
-  CUB: 192,
-  CUW: 531,
-  CYP: 196,
-  CZE: 203,
-  DNK: 208,
-  DJI: 262,
-  DMA: 212,
-  DOM: 214,
-  ECU: 218,
-  EGY: 818,
-  SLV: 222,
-  GNQ: 226,
-  ERI: 232,
-  EST: 233,
-  SWZ: 748,
-  ETH: 231,
-  FLK: 238,
-  FRO: 234,
-  FJI: 242,
-  FIN: 246,
-  FRA: 250,
-  GUF: 254,
-  PYF: 258,
-  ATF: 260,
-  GAB: 266,
-  GMB: 270,
-  GEO: 268,
-  DEU: 276,
-  GHA: 288,
-  GIB: 292,
-  GRC: 300,
-  GRL: 304,
-  GRD: 308,
-  GLP: 312,
-  GUM: 316,
-  GTM: 320,
-  GGY: 831,
-  GIN: 324,
-  GNB: 624,
-  GUY: 328,
-  HTI: 332,
-  HMD: 334,
-  VAT: 336,
-  HND: 340,
-  HKG: 344,
-  HUN: 348,
-  ISL: 352,
-  IND: 356,
-  IDN: 360,
-  IRN: 364,
-  IRQ: 368,
-  IRL: 372,
-  IMN: 833,
-  ISR: 376,
-  ITA: 380,
-  JAM: 388,
-  JPN: 392,
-  JEY: 832,
-  JOR: 400,
-  KAZ: 398,
-  KEN: 404,
-  KIR: 296,
-  PRK: 408,
-  KOR: 410,
-  KWT: 414,
-  KGZ: 417,
-  LAO: 418,
-  LVA: 428,
-  LBN: 422,
-  LSO: 426,
-  LBR: 430,
-  LBY: 434,
-  LIE: 438,
-  LTU: 440,
-  LUX: 442,
-  MAC: 446,
-  MKD: 807,
-  MDG: 450,
-  MWI: 454,
-  MYS: 458,
-  MDV: 462,
-  MLI: 466,
-  MLT: 470,
-  MHL: 584,
-  MTQ: 474,
-  MRT: 478,
-  MUS: 480,
-  MYT: 175,
-  MEX: 484,
-  FSM: 583,
-  MDA: 498,
-  MCO: 492,
-  MNG: 496,
-  MNE: 499,
-  MSR: 500,
-  MAR: 504,
-  MOZ: 508,
-  MMR: 104,
-  NAM: 516,
-  NRU: 520,
-  NPL: 524,
-  NLD: 528,
-  NCL: 540,
-  NZL: 554,
-  NIC: 558,
-  NER: 562,
-  NGA: 566,
-  NIU: 570,
-  NFK: 574,
-  MNP: 580,
-  NOR: 578,
-  OMN: 512,
-  PAK: 586,
-  PLW: 585,
-  PSE: 275,
-  PAN: 591,
-  PNG: 598,
-  PRY: 600,
-  PER: 604,
-  PHL: 608,
-  PCN: 612,
-  POL: 616,
-  PRT: 620,
-  PRI: 630,
-  QAT: 634,
-  REU: 638,
-  ROU: 642,
-  RUS: 643,
-  RWA: 646,
-  BLM: 652,
-  SHN: 654,
-  KNA: 659,
-  LCA: 662,
-  MAF: 663,
-  SPM: 666,
-  VCT: 670,
-  WSM: 882,
-  SMR: 674,
-  STP: 678,
-  SAU: 682,
-  SEN: 686,
-  SRB: 688,
-  SYC: 690,
-  SLE: 694,
-  SGP: 702,
-  SXM: 534,
-  SVK: 703,
-  SVN: 705,
-  SLB: 90,
-  SOM: 706,
-  ZAF: 710,
-  SGS: 239,
-  SSD: 728,
-  ESP: 724,
-  LKA: 144,
-  SDN: 729,
-  SUR: 740,
-  SJM: 744,
-  SWE: 752,
-  CHE: 756,
-  SYR: 760,
-  TWN: 158,
-  TJK: 762,
-  TZA: 834,
-  THA: 764,
-  TLS: 626,
-  TGO: 768,
-  TKL: 772,
-  TON: 776,
-  TTO: 780,
-  TUN: 788,
-  TUR: 792,
-  TKM: 795,
-  TCA: 796,
-  TUV: 798,
-  UGA: 800,
-  UKR: 804,
-  ARE: 784,
-  GBR: 826,
-  USA: 840,
-  UMI: 581,
-  URY: 858,
-  UZB: 860,
-  VUT: 548,
-  VEN: 862,
-  VNM: 704,
-  VGB: 92,
-  VIR: 850,
-  WLF: 876,
-  ESH: 732,
-  YEM: 887,
-  ZMB: 894,
-  ZWE: 716
-} as const;
-
-type ISO2Code = (typeof ISO3ToISO2)[keyof typeof ISO3ToISO2];
-type ISO3Code = keyof typeof ISO3ToISO2;
-type NumericCode = (typeof ISO3ToNumeric)[keyof typeof ISO3ToNumeric];
-
-const ISO2ToISO3 = Object.entries(ISO3ToISO2).reduce((acc, [key, value]) => {
-  acc[value] = key as ISO3Code;
-  return acc;
-}, {} as { [key in ISO2Code]: ISO3Code });
-
-const ISO3ToNumericMap = Object.entries(ISO3ToNumeric).reduce((acc, [key, value]) => {
-  acc[key] = value;
-  return acc;
-}, {} as { [key in ISO3Code]: NumericCode });
-
-const NumericToISO3 = Object.entries(ISO3ToNumeric).reduce((acc, [key, value]) => {
-  acc[value] = key as ISO3Code;
-  return acc;
-}, {} as { [key in NumericCode]: ISO3Code });
-
-const ISO2ToNumeric = Object.entries(ISO2ToISO3).reduce((acc, [iso2, iso3]) => {
-  acc[iso2] = ISO3ToNumericMap[iso3];
-  return acc;
-}, {} as { [key in ISO2Code]: NumericCode });
-
-const NumericToISO2 = Object.entries(NumericToISO3).reduce((acc, [numeric, iso3]) => {
-  acc[numeric] = ISO3ToISO2[iso3];
-  return acc;
-}, {} as { [key in NumericCode]: ISO2Code });
+let countriesCache: Country[] | null = null;
 
 /**
- * Converts an ISO 2 country code to an ISO 3 country code.
- * @param {ISO2Code} ISO2Code - The ISO 2 country code to convert.
- * @returns {ISO3Code} The corresponding ISO 3 country code.
- * @throws {Error} If the input code is not valid.
+ * Fetches and caches country data from the REST Countries API.
+ * @returns {Promise<Country[]>} A promise that resolves to an array of Country objects.
  */
-export function convertISO2ToISO3(ISO2Code: ISO2Code): ISO3Code {
-  const ISO3Code = ISO2ToISO3[ISO2Code];
-  if (!ISO3Code) {
-    throw new Error("Invalid ISO 2 code");
-  }
-  return ISO3Code;
+async function fetchCountries(): Promise<Country[]> {
+  if (countriesCache) return countriesCache; // Use cache if available
+
+  const response = await fetch("https://restcountries.com/v3.1/all");
+  const data = (await response.json()) as Country[];
+  countriesCache = data;
+  return countriesCache;
 }
 
 /**
- * Converts an ISO 3 country code to an ISO 2 country code.
- * @param {ISO3Code} ISO3Code - The ISO 3 country code to convert.
- * @returns {ISO2Code} The corresponding ISO 2 country code.
- * @throws {Error} If the input code is not valid.
+ * Converts an ISO3 code to an ISO2 code.
+ * @param {string} iso3 - The ISO3 code of the country.
+ * @returns {Promise<string | null>} A promise that resolves to the ISO2 code, or null if not found.
  */
-export function convertISO3ToISO2(ISO3Code: ISO3Code): ISO2Code {
-  const ISO2Code = ISO3ToISO2[ISO3Code];
-  if (!ISO2Code) {
-    throw new Error("Invalid ISO 3 code");
-  }
-  return ISO2Code;
+export async function iso3ToIso2(iso3: string): Promise<string | null> {
+  const countries = await fetchCountries();
+  const country = countries.find((c) => c.cca3 === iso3.toUpperCase());
+  return country ? country.cca2 : null;
 }
 
 /**
- * Converts an ISO 3 country code to a numeric country code.
- * @param {ISO3Code} ISO3Code - The ISO 3 country code to convert.
- * @returns {NumericCode} The corresponding numeric country code.
- * @throws {Error} If the input code is not valid.
+ * Converts an ISO2 code to an ISO3 code.
+ * @param {string} iso2 - The ISO2 code of the country.
+ * @returns {Promise<string | null>} A promise that resolves to the ISO3 code, or null if not found.
  */
-export function convertISO3ToNumeric(ISO3Code: ISO3Code): NumericCode {
-  const numericCode = ISO3ToNumericMap[ISO3Code];
-  if (!numericCode) {
-    throw new Error("Invalid ISO 3 code");
-  }
-  return numericCode;
+export async function iso2ToIso3(iso2: string): Promise<string | null> {
+  const countries = await fetchCountries();
+  const country = countries.find((c) => c.cca2 === iso2.toUpperCase());
+  return country ? country.cca3 : null;
 }
 
 /**
- * Converts a numeric country code to an ISO 3 country code.
- * @param {NumericCode} numericCode - The numeric country code to convert.
- * @returns {ISO3Code} The corresponding ISO 3 country code.
- * @throws {Error} If the input code is not valid.
+ * Converts an ISO3 code to its numeric representation.
+ * @param {string} iso3 - The ISO3 code of the country.
+ * @returns {Promise<string | null>} A promise that resolves to the numeric code, or null if not found.
  */
-export function convertNumericToISO3(numericCode: NumericCode): ISO3Code {
-  const ISO3Code = NumericToISO3[numericCode];
-  if (!ISO3Code) {
-    throw new Error("Invalid numeric code");
-  }
-  return ISO3Code;
+export async function iso3ToNumeric(iso3: string): Promise<string | null> {
+  const countries = await fetchCountries();
+  const country = countries.find((c) => c.cca3 === iso3.toUpperCase());
+  return country ? country.ccn3 : null;
 }
 
 /**
- * Converts an ISO 2 country code to a numeric country code.
- * @param {ISO2Code} ISO2Code - The ISO 2 country code to convert.
- * @returns {NumericCode} The corresponding numeric country code.
- * @throws {Error} If the input code is not valid.
+ * Converts a numeric code to an ISO3 code.
+ * @param {string} numeric - The numeric code of the country.
+ * @returns {Promise<string | null>} A promise that resolves to the ISO3 code, or null if not found.
  */
-export function convertISO2ToNumeric(ISO2Code: ISO2Code): NumericCode {
-  const numericCode = ISO2ToNumeric[ISO2Code];
-  if (!numericCode) {
-    throw new Error("Invalid ISO 2 code");
-  }
-  return numericCode;
+export async function numericToIso3(numeric: string): Promise<string | null> {
+  const countries = await fetchCountries();
+  const country = countries.find((c) => c.ccn3 === numeric);
+  return country ? country.cca3 : null;
 }
 
 /**
- * Converts a numeric country code to an ISO 2 country code.
- * @param {NumericCode} numericCode - The numeric country code to convert.
- * @returns {ISO2Code} The corresponding ISO 2 country code.
- * @throws {Error} If the input code is not valid.
+ * Converts an ISO3 code to the country's name.
+ * @param {string} iso3 - The ISO3 code of the country.
+ * @returns {Promise<string | null>} A promise that resolves to the country name, or null if not found.
  */
-export function convertNumericToISO2(numericCode: NumericCode): ISO2Code {
-  const ISO2Code = NumericToISO2[numericCode];
-  if (!ISO2Code) {
-    throw new Error("Invalid numeric code");
-  }
-  return ISO2Code;
+export async function iso3ToName(iso3: string): Promise<string | null> {
+  const countries = await fetchCountries();
+  const country = countries.find((c) => c.cca3 === iso3.toUpperCase());
+  return country ? country.name.common : null;
+}
+
+/**
+ * Converts a country name to its ISO3 code.
+ * @param {string} name - The name of the country.
+ * @returns {Promise<string | null>} A promise that resolves to the ISO3 code, or null if not found.
+ */
+export async function nameToIso3(name: string): Promise<string | null> {
+  const countries = await fetchCountries();
+  const country = countries.find(
+    (c) => c.name.common.toLowerCase() === name.toLowerCase()
+  );
+  return country ? country.cca3 : null;
+}
+
+/**
+ * Converts an ISO2 code to its numeric representation.
+ * @param {string} iso2 - The ISO2 code of the country.
+ * @returns {Promise<string | null>} A promise that resolves to the numeric code, or null if not found.
+ */
+export async function iso2ToNumeric(iso2: string): Promise<string | null> {
+  const countries = await fetchCountries();
+  const country = countries.find((c) => c.cca2 === iso2.toUpperCase());
+  return country ? country.ccn3 : null;
+}
+
+/**
+ * Converts a numeric code to an ISO2 code.
+ * @param {string} numeric - The numeric code of the country.
+ * @returns {Promise<string | null>} A promise that resolves to the ISO2 code, or null if not found.
+ */
+export async function numericToIso2(numeric: string): Promise<string | null> {
+  const countries = await fetchCountries();
+  const country = countries.find((c) => c.ccn3 === numeric);
+  return country ? country.cca2 : null;
+}
+
+/**
+ * Converts a country name to its ISO2 code.
+ * @param {string} name - The name of the country.
+ * @returns {Promise<string | null>} A promise that resolves to the ISO2 code, or null if not found.
+ */
+export async function nameToIso2(name: string): Promise<string | null> {
+  const countries = await fetchCountries();
+  const country = countries.find(
+    (c) => c.name.common.toLowerCase() === name.toLowerCase()
+  );
+  return country ? country.cca2 : null;
+}
+
+/**
+ * Converts an ISO2 code to the country's name.
+ * @param {string} iso2 - The ISO2 code of the country.
+ * @returns {Promise<string | null>} A promise that resolves to the country name, or null if not found.
+ */
+export async function iso2ToName(iso2: string): Promise<string | null> {
+  const countries = await fetchCountries();
+  const country = countries.find((c) => c.cca2 === iso2.toUpperCase());
+  return country ? country.name.common : null;
+}
+
+/**
+ * Converts a numeric code to the country's name.
+ * @param {string} numeric - The numeric code of the country.
+ * @returns {Promise<string | null>} A promise that resolves to the country name, or null if not found.
+ */
+export async function numericToName(numeric: string): Promise<string | null> {
+  const countries = await fetchCountries();
+  const country = countries.find((c) => c.ccn3 === numeric);
+  return country ? country.name.common : null;
+}
+
+/**
+ * Converts a country name to its numeric representation.
+ * @param {string} name - The name of the country.
+ * @returns {Promise<string | null>} A promise that resolves to the numeric code, or null if not found.
+ */
+export async function nameToNumeric(name: string): Promise<string | null> {
+  const countries = await fetchCountries();
+  const country = countries.find(
+    (c) => c.name.common.toLowerCase() === name.toLowerCase()
+  );
+  return country ? country.ccn3 : null;
 }

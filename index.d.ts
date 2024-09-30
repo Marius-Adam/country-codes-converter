@@ -1,546 +1,72 @@
-declare const ISO3ToISO2: {
-    readonly AFG: "AF";
-    readonly ALB: "AL";
-    readonly DZA: "DZ";
-    readonly ASM: "AS";
-    readonly AND: "AD";
-    readonly AGO: "AO";
-    readonly AIA: "AI";
-    readonly ATA: "AQ";
-    readonly ATG: "AG";
-    readonly ARG: "AR";
-    readonly ARM: "AM";
-    readonly ABW: "AW";
-    readonly AUS: "AU";
-    readonly AUT: "AT";
-    readonly AZE: "AZ";
-    readonly BHS: "BS";
-    readonly BHR: "BH";
-    readonly BGD: "BD";
-    readonly BRB: "BB";
-    readonly BLR: "BY";
-    readonly BEL: "BE";
-    readonly BLZ: "BZ";
-    readonly BEN: "BJ";
-    readonly BMU: "BM";
-    readonly BTN: "BT";
-    readonly BOL: "BO";
-    readonly BES: "BQ";
-    readonly BIH: "BA";
-    readonly BWA: "BW";
-    readonly BVT: "BV";
-    readonly BRA: "BR";
-    readonly IOT: "IO";
-    readonly BRN: "BN";
-    readonly BGR: "BG";
-    readonly BFA: "BF";
-    readonly BDI: "BI";
-    readonly CPV: "CV";
-    readonly KHM: "KH";
-    readonly CMR: "CM";
-    readonly CAN: "CA";
-    readonly CYM: "KY";
-    readonly CAF: "CF";
-    readonly TCD: "TD";
-    readonly CHL: "CL";
-    readonly CHN: "CN";
-    readonly CXR: "CX";
-    readonly CCK: "CC";
-    readonly COL: "CO";
-    readonly COM: "KM";
-    readonly COG: "CG";
-    readonly COD: "CD";
-    readonly COK: "CK";
-    readonly CRI: "CR";
-    readonly CIV: "CI";
-    readonly HRV: "HR";
-    readonly CUB: "CU";
-    readonly CUW: "CW";
-    readonly CYP: "CY";
-    readonly CZE: "CZ";
-    readonly DNK: "DK";
-    readonly DJI: "DJ";
-    readonly DMA: "DM";
-    readonly DOM: "DO";
-    readonly ECU: "EC";
-    readonly EGY: "EG";
-    readonly SLV: "SV";
-    readonly GNQ: "GQ";
-    readonly ERI: "ER";
-    readonly EST: "EE";
-    readonly SWZ: "SZ";
-    readonly ETH: "ET";
-    readonly FLK: "FK";
-    readonly FRO: "FO";
-    readonly FJI: "FJ";
-    readonly FIN: "FI";
-    readonly FRA: "FR";
-    readonly GUF: "GF";
-    readonly PYF: "PF";
-    readonly ATF: "TF";
-    readonly GAB: "GA";
-    readonly GMB: "GM";
-    readonly GEO: "GE";
-    readonly DEU: "DE";
-    readonly GHA: "GH";
-    readonly GIB: "GI";
-    readonly GRC: "GR";
-    readonly GRL: "GL";
-    readonly GRD: "GD";
-    readonly GLP: "GP";
-    readonly GUM: "GU";
-    readonly GTM: "GT";
-    readonly GGY: "GG";
-    readonly GIN: "GN";
-    readonly GNB: "GW";
-    readonly GUY: "GY";
-    readonly HTI: "HT";
-    readonly HMD: "HM";
-    readonly VAT: "VA";
-    readonly HND: "HN";
-    readonly HKG: "HK";
-    readonly HUN: "HU";
-    readonly ISL: "IS";
-    readonly IND: "IN";
-    readonly IDN: "ID";
-    readonly IRN: "IR";
-    readonly IRQ: "IQ";
-    readonly IRL: "IE";
-    readonly IMN: "IM";
-    readonly ISR: "IL";
-    readonly ITA: "IT";
-    readonly JAM: "JM";
-    readonly JPN: "JP";
-    readonly JEY: "JE";
-    readonly JOR: "JO";
-    readonly KAZ: "KZ";
-    readonly KEN: "KE";
-    readonly KIR: "KI";
-    readonly PRK: "KP";
-    readonly KOR: "KR";
-    readonly KWT: "KW";
-    readonly KGZ: "KG";
-    readonly LAO: "LA";
-    readonly LVA: "LV";
-    readonly LBN: "LB";
-    readonly LSO: "LS";
-    readonly LBR: "LR";
-    readonly LBY: "LY";
-    readonly LIE: "LI";
-    readonly LTU: "LT";
-    readonly LUX: "LU";
-    readonly MAC: "MO";
-    readonly MKD: "MK";
-    readonly MDG: "MG";
-    readonly MWI: "MW";
-    readonly MYS: "MY";
-    readonly MDV: "MV";
-    readonly MLI: "ML";
-    readonly MLT: "MT";
-    readonly MHL: "MH";
-    readonly MTQ: "MQ";
-    readonly MRT: "MR";
-    readonly MUS: "MU";
-    readonly MYT: "YT";
-    readonly MEX: "MX";
-    readonly FSM: "FM";
-    readonly MDA: "MD";
-    readonly MCO: "MC";
-    readonly MNG: "MN";
-    readonly MNE: "ME";
-    readonly MSR: "MS";
-    readonly MAR: "MA";
-    readonly MOZ: "MZ";
-    readonly MMR: "MM";
-    readonly NAM: "NA";
-    readonly NRU: "NR";
-    readonly NPL: "NP";
-    readonly NLD: "NL";
-    readonly NCL: "NC";
-    readonly NZL: "NZ";
-    readonly NIC: "NI";
-    readonly NER: "NE";
-    readonly NGA: "NG";
-    readonly NIU: "NU";
-    readonly NFK: "NF";
-    readonly MNP: "MP";
-    readonly NOR: "NO";
-    readonly OMN: "OM";
-    readonly PAK: "PK";
-    readonly PLW: "PW";
-    readonly PSE: "PS";
-    readonly PAN: "PA";
-    readonly PNG: "PG";
-    readonly PRY: "PY";
-    readonly PER: "PE";
-    readonly PHL: "PH";
-    readonly PCN: "PN";
-    readonly POL: "PL";
-    readonly PRT: "PT";
-    readonly PRI: "PR";
-    readonly QAT: "QA";
-    readonly REU: "RE";
-    readonly ROU: "RO";
-    readonly RUS: "RU";
-    readonly RWA: "RW";
-    readonly BLM: "BL";
-    readonly SHN: "SH";
-    readonly KNA: "KN";
-    readonly LCA: "LC";
-    readonly MAF: "MF";
-    readonly SPM: "PM";
-    readonly VCT: "VC";
-    readonly WSM: "WS";
-    readonly SMR: "SM";
-    readonly STP: "ST";
-    readonly SAU: "SA";
-    readonly SEN: "SN";
-    readonly SRB: "RS";
-    readonly SYC: "SC";
-    readonly SLE: "SL";
-    readonly SGP: "SG";
-    readonly SXM: "SX";
-    readonly SVK: "SK";
-    readonly SVN: "SI";
-    readonly SLB: "SB";
-    readonly SOM: "SO";
-    readonly ZAF: "ZA";
-    readonly SGS: "GS";
-    readonly SSD: "SS";
-    readonly ESP: "ES";
-    readonly LKA: "LK";
-    readonly SDN: "SD";
-    readonly SUR: "SR";
-    readonly SJM: "SJ";
-    readonly SWE: "SE";
-    readonly CHE: "CH";
-    readonly SYR: "SY";
-    readonly TWN: "TW";
-    readonly TJK: "TJ";
-    readonly TZA: "TZ";
-    readonly THA: "TH";
-    readonly TLS: "TL";
-    readonly TGO: "TG";
-    readonly TKL: "TK";
-    readonly TON: "TO";
-    readonly TTO: "TT";
-    readonly TUN: "TN";
-    readonly TUR: "TR";
-    readonly TKM: "TM";
-    readonly TCA: "TC";
-    readonly TUV: "TV";
-    readonly UGA: "UG";
-    readonly UKR: "UA";
-    readonly ARE: "AE";
-    readonly GBR: "GB";
-    readonly USA: "US";
-    readonly UMI: "UM";
-    readonly URY: "UY";
-    readonly UZB: "UZ";
-    readonly VUT: "VU";
-    readonly VEN: "VE";
-    readonly VNM: "VN";
-    readonly VGB: "VG";
-    readonly VIR: "VI";
-    readonly WLF: "WF";
-    readonly ESH: "EH";
-    readonly YEM: "YE";
-    readonly ZMB: "ZM";
-    readonly ZWE: "ZW";
-};
-declare const ISO3ToNumeric: {
-    readonly AFG: 4;
-    readonly ALB: 8;
-    readonly DZA: 12;
-    readonly ASM: 16;
-    readonly AND: 20;
-    readonly AGO: 24;
-    readonly AIA: 660;
-    readonly ATA: 10;
-    readonly ATG: 28;
-    readonly ARG: 32;
-    readonly ARM: 51;
-    readonly ABW: 533;
-    readonly AUS: 36;
-    readonly AUT: 40;
-    readonly AZE: 31;
-    readonly BHS: 44;
-    readonly BHR: 48;
-    readonly BGD: 50;
-    readonly BRB: 52;
-    readonly BLR: 112;
-    readonly BEL: 56;
-    readonly BLZ: 84;
-    readonly BEN: 204;
-    readonly BMU: 60;
-    readonly BTN: 64;
-    readonly BOL: 68;
-    readonly BES: 535;
-    readonly BIH: 70;
-    readonly BWA: 72;
-    readonly BVT: 74;
-    readonly BRA: 76;
-    readonly IOT: 86;
-    readonly BRN: 96;
-    readonly BGR: 100;
-    readonly BFA: 854;
-    readonly BDI: 108;
-    readonly CPV: 132;
-    readonly KHM: 116;
-    readonly CMR: 120;
-    readonly CAN: 124;
-    readonly CYM: 136;
-    readonly CAF: 140;
-    readonly TCD: 148;
-    readonly CHL: 152;
-    readonly CHN: 156;
-    readonly CXR: 162;
-    readonly CCK: 166;
-    readonly COL: 170;
-    readonly COM: 174;
-    readonly COG: 178;
-    readonly COD: 180;
-    readonly COK: 184;
-    readonly CRI: 188;
-    readonly CIV: 384;
-    readonly HRV: 191;
-    readonly CUB: 192;
-    readonly CUW: 531;
-    readonly CYP: 196;
-    readonly CZE: 203;
-    readonly DNK: 208;
-    readonly DJI: 262;
-    readonly DMA: 212;
-    readonly DOM: 214;
-    readonly ECU: 218;
-    readonly EGY: 818;
-    readonly SLV: 222;
-    readonly GNQ: 226;
-    readonly ERI: 232;
-    readonly EST: 233;
-    readonly SWZ: 748;
-    readonly ETH: 231;
-    readonly FLK: 238;
-    readonly FRO: 234;
-    readonly FJI: 242;
-    readonly FIN: 246;
-    readonly FRA: 250;
-    readonly GUF: 254;
-    readonly PYF: 258;
-    readonly ATF: 260;
-    readonly GAB: 266;
-    readonly GMB: 270;
-    readonly GEO: 268;
-    readonly DEU: 276;
-    readonly GHA: 288;
-    readonly GIB: 292;
-    readonly GRC: 300;
-    readonly GRL: 304;
-    readonly GRD: 308;
-    readonly GLP: 312;
-    readonly GUM: 316;
-    readonly GTM: 320;
-    readonly GGY: 831;
-    readonly GIN: 324;
-    readonly GNB: 624;
-    readonly GUY: 328;
-    readonly HTI: 332;
-    readonly HMD: 334;
-    readonly VAT: 336;
-    readonly HND: 340;
-    readonly HKG: 344;
-    readonly HUN: 348;
-    readonly ISL: 352;
-    readonly IND: 356;
-    readonly IDN: 360;
-    readonly IRN: 364;
-    readonly IRQ: 368;
-    readonly IRL: 372;
-    readonly IMN: 833;
-    readonly ISR: 376;
-    readonly ITA: 380;
-    readonly JAM: 388;
-    readonly JPN: 392;
-    readonly JEY: 832;
-    readonly JOR: 400;
-    readonly KAZ: 398;
-    readonly KEN: 404;
-    readonly KIR: 296;
-    readonly PRK: 408;
-    readonly KOR: 410;
-    readonly KWT: 414;
-    readonly KGZ: 417;
-    readonly LAO: 418;
-    readonly LVA: 428;
-    readonly LBN: 422;
-    readonly LSO: 426;
-    readonly LBR: 430;
-    readonly LBY: 434;
-    readonly LIE: 438;
-    readonly LTU: 440;
-    readonly LUX: 442;
-    readonly MAC: 446;
-    readonly MKD: 807;
-    readonly MDG: 450;
-    readonly MWI: 454;
-    readonly MYS: 458;
-    readonly MDV: 462;
-    readonly MLI: 466;
-    readonly MLT: 470;
-    readonly MHL: 584;
-    readonly MTQ: 474;
-    readonly MRT: 478;
-    readonly MUS: 480;
-    readonly MYT: 175;
-    readonly MEX: 484;
-    readonly FSM: 583;
-    readonly MDA: 498;
-    readonly MCO: 492;
-    readonly MNG: 496;
-    readonly MNE: 499;
-    readonly MSR: 500;
-    readonly MAR: 504;
-    readonly MOZ: 508;
-    readonly MMR: 104;
-    readonly NAM: 516;
-    readonly NRU: 520;
-    readonly NPL: 524;
-    readonly NLD: 528;
-    readonly NCL: 540;
-    readonly NZL: 554;
-    readonly NIC: 558;
-    readonly NER: 562;
-    readonly NGA: 566;
-    readonly NIU: 570;
-    readonly NFK: 574;
-    readonly MNP: 580;
-    readonly NOR: 578;
-    readonly OMN: 512;
-    readonly PAK: 586;
-    readonly PLW: 585;
-    readonly PSE: 275;
-    readonly PAN: 591;
-    readonly PNG: 598;
-    readonly PRY: 600;
-    readonly PER: 604;
-    readonly PHL: 608;
-    readonly PCN: 612;
-    readonly POL: 616;
-    readonly PRT: 620;
-    readonly PRI: 630;
-    readonly QAT: 634;
-    readonly REU: 638;
-    readonly ROU: 642;
-    readonly RUS: 643;
-    readonly RWA: 646;
-    readonly BLM: 652;
-    readonly SHN: 654;
-    readonly KNA: 659;
-    readonly LCA: 662;
-    readonly MAF: 663;
-    readonly SPM: 666;
-    readonly VCT: 670;
-    readonly WSM: 882;
-    readonly SMR: 674;
-    readonly STP: 678;
-    readonly SAU: 682;
-    readonly SEN: 686;
-    readonly SRB: 688;
-    readonly SYC: 690;
-    readonly SLE: 694;
-    readonly SGP: 702;
-    readonly SXM: 534;
-    readonly SVK: 703;
-    readonly SVN: 705;
-    readonly SLB: 90;
-    readonly SOM: 706;
-    readonly ZAF: 710;
-    readonly SGS: 239;
-    readonly SSD: 728;
-    readonly ESP: 724;
-    readonly LKA: 144;
-    readonly SDN: 729;
-    readonly SUR: 740;
-    readonly SJM: 744;
-    readonly SWE: 752;
-    readonly CHE: 756;
-    readonly SYR: 760;
-    readonly TWN: 158;
-    readonly TJK: 762;
-    readonly TZA: 834;
-    readonly THA: 764;
-    readonly TLS: 626;
-    readonly TGO: 768;
-    readonly TKL: 772;
-    readonly TON: 776;
-    readonly TTO: 780;
-    readonly TUN: 788;
-    readonly TUR: 792;
-    readonly TKM: 795;
-    readonly TCA: 796;
-    readonly TUV: 798;
-    readonly UGA: 800;
-    readonly UKR: 804;
-    readonly ARE: 784;
-    readonly GBR: 826;
-    readonly USA: 840;
-    readonly UMI: 581;
-    readonly URY: 858;
-    readonly UZB: 860;
-    readonly VUT: 548;
-    readonly VEN: 862;
-    readonly VNM: 704;
-    readonly VGB: 92;
-    readonly VIR: 850;
-    readonly WLF: 876;
-    readonly ESH: 732;
-    readonly YEM: 887;
-    readonly ZMB: 894;
-    readonly ZWE: 716;
-};
-type ISO2Code = (typeof ISO3ToISO2)[keyof typeof ISO3ToISO2];
-type ISO3Code = keyof typeof ISO3ToISO2;
-type NumericCode = (typeof ISO3ToNumeric)[keyof typeof ISO3ToNumeric];
 /**
- * Converts an ISO 2 country code to an ISO 3 country code.
- * @param {ISO2Code} ISO2Code - The ISO 2 country code to convert.
- * @returns {ISO3Code} The corresponding ISO 3 country code.
- * @throws {Error} If the input code is not valid.
+ * Converts an ISO3 code to an ISO2 code.
+ * @param {string} iso3 - The ISO3 code of the country.
+ * @returns {Promise<string | null>} A promise that resolves to the ISO2 code, or null if not found.
  */
-export declare function convertISO2ToISO3(ISO2Code: ISO2Code): ISO3Code;
+export declare function iso3ToIso2(iso3: string): Promise<string | null>;
 /**
- * Converts an ISO 3 country code to an ISO 2 country code.
- * @param {ISO3Code} ISO3Code - The ISO 3 country code to convert.
- * @returns {ISO2Code} The corresponding ISO 2 country code.
- * @throws {Error} If the input code is not valid.
+ * Converts an ISO2 code to an ISO3 code.
+ * @param {string} iso2 - The ISO2 code of the country.
+ * @returns {Promise<string | null>} A promise that resolves to the ISO3 code, or null if not found.
  */
-export declare function convertISO3ToISO2(ISO3Code: ISO3Code): ISO2Code;
+export declare function iso2ToIso3(iso2: string): Promise<string | null>;
 /**
- * Converts an ISO 3 country code to a numeric country code.
- * @param {ISO3Code} ISO3Code - The ISO 3 country code to convert.
- * @returns {NumericCode} The corresponding numeric country code.
- * @throws {Error} If the input code is not valid.
+ * Converts an ISO3 code to its numeric representation.
+ * @param {string} iso3 - The ISO3 code of the country.
+ * @returns {Promise<string | null>} A promise that resolves to the numeric code, or null if not found.
  */
-export declare function convertISO3ToNumeric(ISO3Code: ISO3Code): NumericCode;
+export declare function iso3ToNumeric(iso3: string): Promise<string | null>;
 /**
- * Converts a numeric country code to an ISO 3 country code.
- * @param {NumericCode} numericCode - The numeric country code to convert.
- * @returns {ISO3Code} The corresponding ISO 3 country code.
- * @throws {Error} If the input code is not valid.
+ * Converts a numeric code to an ISO3 code.
+ * @param {string} numeric - The numeric code of the country.
+ * @returns {Promise<string | null>} A promise that resolves to the ISO3 code, or null if not found.
  */
-export declare function convertNumericToISO3(numericCode: NumericCode): ISO3Code;
+export declare function numericToIso3(numeric: string): Promise<string | null>;
 /**
- * Converts an ISO 2 country code to a numeric country code.
- * @param {ISO2Code} ISO2Code - The ISO 2 country code to convert.
- * @returns {NumericCode} The corresponding numeric country code.
- * @throws {Error} If the input code is not valid.
+ * Converts an ISO3 code to the country's name.
+ * @param {string} iso3 - The ISO3 code of the country.
+ * @returns {Promise<string | null>} A promise that resolves to the country name, or null if not found.
  */
-export declare function convertISO2ToNumeric(ISO2Code: ISO2Code): NumericCode;
+export declare function iso3ToName(iso3: string): Promise<string | null>;
 /**
- * Converts a numeric country code to an ISO 2 country code.
- * @param {NumericCode} numericCode - The numeric country code to convert.
- * @returns {ISO2Code} The corresponding ISO 2 country code.
- * @throws {Error} If the input code is not valid.
+ * Converts a country name to its ISO3 code.
+ * @param {string} name - The name of the country.
+ * @returns {Promise<string | null>} A promise that resolves to the ISO3 code, or null if not found.
  */
-export declare function convertNumericToISO2(numericCode: NumericCode): ISO2Code;
-export {};
+export declare function nameToIso3(name: string): Promise<string | null>;
+/**
+ * Converts an ISO2 code to its numeric representation.
+ * @param {string} iso2 - The ISO2 code of the country.
+ * @returns {Promise<string | null>} A promise that resolves to the numeric code, or null if not found.
+ */
+export declare function iso2ToNumeric(iso2: string): Promise<string | null>;
+/**
+ * Converts a numeric code to an ISO2 code.
+ * @param {string} numeric - The numeric code of the country.
+ * @returns {Promise<string | null>} A promise that resolves to the ISO2 code, or null if not found.
+ */
+export declare function numericToIso2(numeric: string): Promise<string | null>;
+/**
+ * Converts a country name to its ISO2 code.
+ * @param {string} name - The name of the country.
+ * @returns {Promise<string | null>} A promise that resolves to the ISO2 code, or null if not found.
+ */
+export declare function nameToIso2(name: string): Promise<string | null>;
+/**
+ * Converts an ISO2 code to the country's name.
+ * @param {string} iso2 - The ISO2 code of the country.
+ * @returns {Promise<string | null>} A promise that resolves to the country name, or null if not found.
+ */
+export declare function iso2ToName(iso2: string): Promise<string | null>;
+/**
+ * Converts a numeric code to the country's name.
+ * @param {string} numeric - The numeric code of the country.
+ * @returns {Promise<string | null>} A promise that resolves to the country name, or null if not found.
+ */
+export declare function numericToName(numeric: string): Promise<string | null>;
+/**
+ * Converts a country name to its numeric representation.
+ * @param {string} name - The name of the country.
+ * @returns {Promise<string | null>} A promise that resolves to the numeric code, or null if not found.
+ */
+export declare function nameToNumeric(name: string): Promise<string | null>;
